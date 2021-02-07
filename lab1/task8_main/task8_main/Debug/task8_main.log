@@ -1,0 +1,3 @@
+﻿  task8_main.cpp
+C:\Users\RFLX\source\repos\task8_main\task8_main\task8_main.cpp(8,13): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  task8_main.vcxproj -> C:\Users\RFLX\source\repos\task8_main\Debug\task8_main.exe

@@ -1,0 +1,3 @@
+C:\Users\RFLX\source\repos\task8_lib\Debug\task8_lib.pdb
+C:\Users\RFLX\source\repos\task8_lib\task8_lib\Debug\task8_lib.pdb
+C:\Users\RFLX\source\repos\task8_main\Debug\task8_lib.pdb
