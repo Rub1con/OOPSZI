@@ -1,0 +1,3 @@
+﻿  task1_for.cpp
+C:\Users\RFLX\source\repos\LAB3\task1\task1_for\task1_for.cpp(16,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  task1_for.vcxproj -> C:\Users\RFLX\source\repos\LAB3\task1\Debug\task1_for.exe
