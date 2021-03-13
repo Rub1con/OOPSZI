@@ -1,4 +1,0 @@
-﻿  task3_for.cpp
-C:\Users\RFLX\source\repos\LAB3\task3\task3_for\task3_for.cpp(18,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-C:\Users\RFLX\source\repos\LAB3\task3\task3_for\task3_for.cpp(19,12): warning C4101: res: неиспользованная локальная переменная
-  task3_for.vcxproj -> C:\Users\RFLX\source\repos\LAB3\task3\Debug\task3_for.exe
