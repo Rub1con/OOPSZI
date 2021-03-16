@@ -1,4 +1,0 @@
-﻿  task3_do_while.cpp
-C:\Users\RFLX\source\repos\LAB3\task3\task3_do_while\task3_do_while.cpp(20,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-C:\Users\RFLX\source\repos\LAB3\task3\task3_do_while\task3_do_while.cpp(21,12): warning C4101: res: неиспользованная локальная переменная
-  task3_do_while.vcxproj -> C:\Users\RFLX\source\repos\LAB3\task3\Debug\task3_do_while.exe
