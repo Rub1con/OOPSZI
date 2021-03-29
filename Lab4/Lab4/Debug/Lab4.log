@@ -1,0 +1,5 @@
+﻿  Complex.cpp
+  main.cpp
+G:\Users\porti\source\repos\Lab4\Lab4\main.cpp(6,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  Создание кода...
+  Lab4.vcxproj -> G:\Users\porti\source\repos\Lab4\Debug\Lab4.exe
