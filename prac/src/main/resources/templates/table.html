@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Present data</title>
+    <style>
+        button {
+            background-color: azure;
+            border-radius: 8px;
+            padding: 10px 10px 10px 10px;
+        }
+        h1 {
+            font: 24pt sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            border: 1px solid grey;
+            width: 100%;
+        }
+        th {
+            font: bold 12pt/10pt sans-serif;
+            padding: 5px 10px 5px 10px;
+            border: 1px solid grey;
+            text-align: center;
+        }
+        td {
+            font: 12pt/10pt sans-serif;
+            padding: 5px 10px 5px 10px;
+            border: 1px solid grey;
+            text-align: center;
+        }
+        .inline {
+            display: inline-block;
+            height: 30px;
+            width: 15%;
+            padding-left: 10px;
+        }
+        body {
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+<h1>Прогноз погоды</h1>
+<br><br>
+<div>
+    <form th:action="@{/weather/first-page}">
+        <button type="submit"> Главная страница </button>
+    </form>
+</div>
+<br><br>
+
+<div>
+    <br><br>
+    <table>
+        <tr>
+            <th>№</th>
+            <th>Тип прогноза</th>
+            <th>Начало прогноза</th>
+            <th>Окончание прогноза</th>
+            <th>Минимальная температура</th>
+            <th>Максимальная температура</th>
+        </tr>
+        <tr th:each="weather : ${weathers}">
+            <td th:text="${weather.getId()}"></td>
+            <td th:text="${weather.getForecastType()}"></td>
+            <td th:text="${weather.getStartForecast()}"></td>
+            <td th:text="${weather.getEndForecast()}"></td>
+            <td th:text="${weather.getMinTemperature()}"></td>
+            <td th:text="${weather.getMaxTemperature()}"></td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    function tableSearch() {
+        let phrase = document.getElementById('search-text');
+        let table = document.getElementById('info-table');
+        let regPhrase = new RegExp(phrase.value, 'i');
+        let flag = false;
+        for (let i = 1; i < table.rows.length; i++) {
+            flag = false;
+            for (let j = table.rows[i].cells.length - 1; j >= 0; j--) {
+                flag = regPhrase.test(table.rows[i].cells[j].innerHTML);
+                if (flag) break;
+            }
+            if (flag) {
+                table.rows[i].style.display = "";
+            } else {
+                table.rows[i].style.display = "none";
+            }
+        }
+    }
+</script>
+</body>
+</html>
