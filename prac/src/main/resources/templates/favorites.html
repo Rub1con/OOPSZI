@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+  <style>
+    h1 {
+      font: 24pt sans-serif;
+    }
+    table {
+      border-collapse: collapse;
+      border: 1px solid grey;
+      width: 100%;
+    }
+    button {
+      background-color: azure;
+      border-radius: 8px;
+      padding: 10px 10px 10px 10px;
+    }
+    button:hover{
+      background-color: beige;
+    }
+    th {
+      font: bold 12pt/10pt sans-serif;
+      padding: 5px 10px 5px 10px;
+      border: 1px solid grey;
+      text-align: center;
+    }
+    td {
+      font: 12pt/10pt sans-serif;
+      padding: 5px 10px 5px 10px;
+      border: 1px solid grey;
+      text-align: center;
+    }
+    body {
+      background-color: aliceblue;
+    }
+  </style>
+</head>
+<body>
+<h1>Прогноз погоды</h1>
+<br><br>
+<form th:action="@{/weather/first-page}">
+  <button type="submit">Вернуться на главную страницу</button>
+</form>
+<br><br>
+<div>
+  <table id="info-table">
+    <tr>
+      <th>№</th>
+      <th>Тип прогноза</th>
+      <th>Начало прогноза</th>
+      <th>Окончание прогноза</th>
+      <th>Минимальная температура</th>
+      <th>Максимальная температура</th>
+      <th>Удалить из избранного</th>
+    </tr>
+    <tr th:each="weather : ${weathers}">
+      <td th:text="${weather.getId()}"></td>
+      <td th:text="${weather.getForecastType()}"></td>
+      <td th:text="${weather.getStartForecast()}"></td>
+      <td th:text="${weather.getEndForecast()}"></td>
+      <td th:text="${weather.getMinTemperature()}"></td>
+      <td th:text="${weather.getMaxTemperature()}"></td>
+      <td>
+        <form th:method="POST" th:action="@{/weather/remove-from-favorite}">
+          <button type="submit" th:value="${weather.getId()}" th:name="favoriteWeatherId">-</button>
+        </form>
+      </td>
+
+    </tr>
+  </table>
+</div>
+</form>
+</body>
+</html>
